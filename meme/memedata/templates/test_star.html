@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block head %}
+<!--<link rel="stylesheet" href="/static/MyStyle/自定义.css">-->
+{% endblock %}
+{% block title %}测试服用户{% endblock %}
+{% block style %}
+<style type="text/css">
+    table {
+        border-collapse: collapse;
+        width: 1200.41px;
+        /*height: 130.11px;*/
+    }
+
+    table, td, th {
+        border: 1px solid #050505;
+    }
+    h1,h2,h3 {
+        color: #ff0000
+        font-size: 30px
+        }
+    #content-hd{
+         height: 50px;
+    }
+
+</style>
+{% endblock %}
+{% block content %}
+    <div id="content-hd">
+        <h3 > 测试用户数据 </h3>
+    </div>
+    <form   action="">
+            <p style="color:black;font-size:12px">用户id</p>
+            <p class="content-name"><input type="text" value="" name="yh1"></p>
+            <p style="color:black;font-size:12px">充值money</p>
+            <p class="content-name"><input type="text" value="" name="yh1"></p>
+            <p class="content-xs" style="height: 30px;"></p>
+
+            <p ><input  clss="bton" type="button" value="确认"></p>
+        </form>
+
+    </div>
+{% endblock %}
+
+{% block jq %}
+<!--<script>-->
+
+<!--    if(typeof jQuery== "undefined"){-->
+<!--      window.alert("jQuery引用失败!");-->
+
+<!--    }else{-->
+<!--      window.alert("jQuery引用成功!");-->
+<!--    }-->
+
+
+<!-- </script>-->
+<script>
+     // $(".updateButton").click(function () {
+     //     var apiData = $(".check_api").serializeArray();
+     //     var str=  JSON.stringify(apiData )
+     //     // alert(str);
+     //     $.ajax({
+     //         url:"/api_manage/check_api",
+     //         data:str,
+     //         datatype:"json",
+     //         type:"post",
+     //         success: function (data) {
+     //             // alert("<pre>"+JSON.stringify(data, null, 2)+"</pre>");
+     //             var str1 = "";
+     //             $(".api_program").html("");
+     //             for(var i = 0;i<data.data.length;i++){
+     //                 if (data.data[i].str_check == "success" && data.data[i].code_check == "200") {
+     //                     str1 = "<tr class='list-group-item-success'>" +
+     //                         "<td>" + data.data[i].name + "</td>" +
+     //                         "<td>" + data.data[i].host + "</td>" +
+     //                         "<td>" + data.data[i].url + "</td>" +
+     //                         "<td>" + data.data[i].code_check + "</td>" +
+     //                         "<td>" + data.data[i].str_check + "</td>" +
+     //                         "</tr>";
+     //                 } else if (data.data[i].str_check == "success" && data.data[i].code_check != "200"){
+     //                     str1 = "<tr class='list-group-item-info'>" +
+     //                         "<td>" + data.data[i].name + "</td>" +
+     //                         "<td>" + data.data[i].host + "</td>" +
+     //                         "<td>" + data.data[i].url + "</td>" +
+     //                         "<td>" + data.data[i].code_check + "</td>" +
+     //                         "<td>" + data.data[i].str_check + "</td>" +
+     //                         "</tr>";
+     //                 } else {
+     //                     str1 = "<tr class='list-group-item-danger'>" +
+     //                         "<td>" + data.data[i].name + "</td>" +
+     //                         "<td>" + data.data[i].host + "</td>" +
+     //                         "<td>" + data.data[i].url + "</td>" +
+     //                         "<td>" + data.data[i].code_check + "</td>" +
+     //                         "<td>" + data.data[i].str_check + "</td>" +
+     //                         "</tr>";
+     //                 }
+     //                 $(".api_program").append(str1);
+     //             }
+     //         },
+     //         error: function () {
+     //             alert("调用方法失败")
+     //        },
+     //        complete: function () {
+     //
+     //        }
+     //     })
+     // })
+
+
+</script>
+{% endblock %}

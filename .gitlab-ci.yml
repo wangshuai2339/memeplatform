@@ -1,0 +1,13 @@
+stages :
+    - deploy
+
+deploy:staging :
+    stage : deploy
+    script :
+        - ssh root@192.168.31.235 "
+            cd /root/memeplatform/Dataplatform && git pull;
+            sh run.sh restart"
+    only :
+        - master
+    tags :
+        - java-shell1

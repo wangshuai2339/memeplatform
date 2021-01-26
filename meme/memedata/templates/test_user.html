@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block head %}
+<!--<link rel="stylesheet" href="/static/MyStyle/自定义.css">-->
+{% endblock %}
+{% block title %}测试服用户{% endblock %}
+{% block style %}
+<style type="text/css">
+    table {
+        border-collapse: collapse;
+        width: 1200.41px;
+        height: 150.11px;
+    }
+
+    table, td, th {
+        border: 1px solid black;
+    }
+    h1,h2,h3 {
+        color: red
+        font-size: 30px
+        }
+    #content-hd{
+         height: 50px;
+    }
+
+</style>
+{% endblock %}
+{% block content %}
+    <div id="content-hd">
+        <h3 > 测试用户数据 </h3>
+    </div>
+    <div>
+        <table>
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>用户名</th>
+            <th>密码</th>
+        </tr>
+        </thead>
+        <tbody>
+        {%for testuser in testusers %}
+        <tr >
+            <td>{{ testuser.id }}</td>
+            <td>{{ testuser.username }}</td>
+            <td>{{ testuser.password }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+    </div>
+{% endblock %}

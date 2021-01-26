@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>测试平台-登录</title>
+	<link rel="stylesheet" type="text/css" href="/static/login/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/login/css/main.css">
+
+
+</head>
+<body>
+	<div class="login_top clearfix">
+		<a href="index.html" class="login_logo"><img src="/static/login/images/logo02-new2.png"></a>
+	</div>
+
+	<div class="login_form_bg">
+		<div class="login_form_wrap clearfix">
+			<div class="login_banner fl"></div>
+			<div class="slogan fl">么么测试平台</div>
+			<div class="login_form fr">
+				<div class="login_title clearfix">
+					<h1>用户登录</h1>
+					<a href="/memedata/api/v1/register/">立即注册</a>
+				</div>
+				<div class="form_input">
+					<form  method="post">
+                         {% csrf_token %}
+<!--						<div class="username1" ><input type="text" name="username" class="name_input" placeholder="请输入用户名">{{ username }}</div>-->
+						<div class="username1" ><input type="text" name="username" class="name_input" placeholder="请输入用户名"></div>
+						<div class="user_error">{{ name_error }}</div>
+						<div class="pwd1"><input type="password" name="pwd" class="pass_input" placeholder="请输入密码"></div>
+						<div class="pwd_error">{{ pwd_error }}</div>
+
+
+<!--                        <div class="yzm">-->
+<!--                            <input type="text"  class="yzm1" placeholder="请输入验证码" name="verificationcode">-->
+<!--                            <img style="cursor:pointer" src="/fruist/verificationcode" alt="验证码" id="verificationcode">-->
+<!--                        </div>-->
+                        <div class="yzm_error">{{ verificationcode_error }} {{ errmsg }}</div>
+
+<!--						<div class="more_input clearfix">-->
+<!--							<input type="checkbox" name="remember"{{ checked }}>-->
+<!--							<label>记住用户名</label>-->
+<!--							<a href="/fruist/pw_update">忘记密码</a>-->
+<!--						</div>-->
+						<input type="submit" name="" value="登录" class="input_submit">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <script>
+        src="/fruist/verificationcode?n="
+        verificationcode=document.getElementById('verificationcode')
+        verificationcode.onclick = function () {
+        verificationcode.src=src+new Date().getTime()
+        }
+
+    </script>
+</body>
+</html>

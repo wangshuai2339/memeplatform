@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+{% block head %}
+<!--<link rel="stylesheet" href="/static/MyStyle/自定义.css">-->
+<script src="/static/jquery-3.3.1.min.js"></script>
+<script>
+
+</script>
+{% endblock %}
+{% block title %}测试服用户{% endblock %}
+{% block style %}
+<style type="text/css">
+    #content-hd{
+         height: 500px;
+         width: 1200.41px;
+         padding-top: 30px;
+         padding-left: 150px;
+    }
+    .content-zh{
+    height: 50px;
+    width: 160px;
+    }
+index
+</style>
+{% endblock %}
+{% block content %}
+    <div id="content-hd">
+        <div style="height: 80px;color:blue;"><h3>PK房邀请主播</h3></div>
+        <hr >
+        <form   action="">
+            <p style="color:black">邀请主播的账号/密码</p>
+            <p class="content-zh"><input type="text" value="" name="yzh1"></p>
+            <p style="color:black">被邀请主播的账号/密码</p>
+            <p class="content-zh"><input type="text" value="" name="zh1"></p>
+            <p style="color:black">被邀请主播的账号/密码</p>
+            <p class="content-zh"><input type="text" value="" name="zh2"></p>
+            <p style="color:black">被邀请主播的账号/密码</p>
+            <p class="content-zh"><input type="text" value="" name="zh3"></p>
+            <p ><input type="button" value="确认"></p>
+        </form>
+    </div>
+{% endblock %}

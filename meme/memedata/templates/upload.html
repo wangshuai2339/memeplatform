@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+<form action="/memedata/api/v1/upload" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div>用户名:<input type="text" name="username"></div>
+  <div>头像<input type="file" name="avatar"></div>
+  <input type="submit" value="提交">
+</form>
+</body>
+</html>

@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% block head %}
+<!--<link rel="stylesheet" href="/static/MyStyle/自定义.css">-->
+<script src="/static/jquery-3.3.1.min.js"></script>
+
+{% endblock %}
+{% block title %}测试服用户{% endblock %}
+{% block style %}
+<style type="text/css">
+    #content-hd{
+         height: 500px;
+         width: 1200.41px;
+         padding-top: 30px;
+         padding-left: 150px;
+    }
+    .content-name{
+    height: 25px;
+    width: 160px;
+    }
+    .content-pw{
+    height: 25px;
+    width: 160px;
+    }
+    .content-xs{
+
+    }
+
+</style>
+{% endblock %}
+{% block content %}
+    <div id="content-hd">
+        <div style="height: 80px;color:blue;"><h3>PK房邀请主播</h3></div>
+        <hr >
+        <form   action="">
+            <p style="color:black;font-size:12px">邀请主播的账号</p>
+            <p class="content-name"><input type="text" value="" name="yzh1"></p>
+            <p style="color:black;font-size:12px">邀请主播的密码</p>
+            <p class="content-name"><input type="text" value="" name="yzh1"></p>
+            <p class="content-xs" style="height: 30px;"></p>
+
+            <p style="color:black;font-size:12px">被邀请主播的账号</p>
+            <p class="content-name"><input type="text" value="" name="zh1"></p>
+            <p style="color:black;font-size:12px">被邀请主播的密码</p>
+            <p class="content-name"><input type="text" value="" name="zh1"></p>
+            <p style="height: 30px;"></p>
+
+            <p style="color:black;font-size:12px">被邀请主播的账号</p>
+            <p class="content-name"><input type="text" value="" name="zh2"></p>
+            <p style="color:black;font-size:12px">被邀请主播的密码</p>
+            <p class="content-name"><input type="text" value="" name="zh2"></p>
+             <p style="height: 30px;"></p>
+
+            <p style="color:black;font-size:12px">被邀请主播的账号</p>
+            <p class="content-name"><input type="text" value="" name="zh3"></p>
+            <p style="color:black;font-size:12px">被邀请主播的密码</p>
+            <p class="content-name"><input type="text" value="" name="zh3"></p>
+            <p style="height: 30px;"></p>
+
+            <p ><input type="button" value="确认"></p>
+        </form>
+    </div>
+{% endblock %}
+{% block jq %}
+<!--<script>-->
+
+<!--    if(typeof jQuery== "undefined"){-->
+<!--      window.alert("jQuery引用失败!");-->
+
+<!--    }else{-->
+<!--      window.alert("jQuery引用成功!");-->
+
+<!--    }-->
+
+<!-- </script>-->
+
+
+<script>
+alert(2);
+$(() => {
+    alert(1);
+	$(".content-name").change(function(){
+		$.ajax({
+            type: "GET",
+            url: "https://test-cryolite.memeyule.com/api/v5/multi-pk/invite-validate",
+            data: { uid:1492330 },
+            dataType: "json",
+            success: function(data){
+                alert(123);
+                $(".content-xs").append(data.uid);
+            }
+		});
+	});
+});
+</script>
+
+
+<!--<script>-->
+<!--$(document).ready(function(){-->
+<!--	$(".content-name").change(function(){-->
+<!--		 alert("success")-->
+<!--	});-->
+<!--});-->
+<!--</script>-->
+
+<!--
+<script>
+$(document).ready(function(){
+	$(".content-name").change(function(){
+		 $.get("https://test-cryolite.memeyule.com/api/v5/multi-pk/invite-validate?uid=1492330",function(data,status){
+
+			alert("nickname: " + data.nickname +"uid: " + data.uid + "\n状态: " + status);
+         if(status=="success")
+			$(".content-xs").append(data.uid);
+		});
+	});
+});
+</script>
+-->
+
+<!--<script>-->
+<!--$(document).ready(function(){-->
+<!--	$(".content-name").change(function(){-->
+<!--		 $("#div1").load("https://test-cryolite.memeyule.com/api/v5/multi-pk/invite-validate?uid=1492303",function(responseTxt,statusTxt,xhr){-->
+<!--              alert("外部内容加载成功！");-->
+<!--            if(statusTxt=="error")-->
+<!--              alert("Error: "+xhr.status+": "+xhr.statusText);-->
+<!--          });-->
+<!--	});-->
+<!--});-->
+<!--</script>-->
+
+
+
+{% endblock %}
